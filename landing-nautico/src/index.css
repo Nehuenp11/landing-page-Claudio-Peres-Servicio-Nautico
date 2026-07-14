@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Paleta extraida de los archivos de marca reales (logo Claudio Perez):
+     azul principal #2E358D, azul-violaceo del banderin #322783,
+     rojo #E40613. El "profundo" es una variante mas oscura del azul
+     de marca para fondos hero, no un color inventado aparte. */
+  --color-marca-azul: #2e358d;      /* azul principal de marca */
+  --color-marca-azul-oscuro: #1a1d55; /* variante oscura, fondos hero */
+  --color-marca-violeta: #322783;    /* azul-violaceo del banderin */
+  --color-marca-rojo: #e40613;       /* rojo de marca */
+  --color-marca-rojo-hover: #c00510;
+
+  --color-whatsapp: #25d366;         /* verde oficial, solo para botones de WhatsApp */
+  --color-whatsapp-hover: #1ebe5b;
+
+  --color-fondo: #ffffff;
+  --color-fondo-suave: #f5f6fb;      /* apenas teñido de azul, no crema */
+  --color-tinta: #111114;            /* casi negro, como el texto del logo */
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-tinta);
+    background-color: var(--color-fondo);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-marca-rojo);
+    outline-offset: 2px;
+  }
+}
